@@ -15,15 +15,14 @@ public class Main {
 		}
 	
 	private void go() { 
-		while (true) {
+		while (model.hasKey == false) {
 		Room currentroom = hmap.get(model.getState());
 		v.printDescription(currentroom.getDescription());
-		for (int i = 0; i < currentroom.getOptions().size(); i++) {
-			System.out.println(currentroom.getOptions().get(i));
-		}
+		v.printOptions(currentroom.getOptions());
 		int input = scan.nextInt();
-		System.out.println(currentroom.process(input));
+		v.printProcess(currentroom.process(input));
 	}
+		System.out.println("You have won the game!");
 }
 
 	public void hashMap() {
